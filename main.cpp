@@ -1,6 +1,7 @@
-/*Intel Core i3 3220 @ 3.30GHz два ядра 4 потока.
+/*Intel Core i3 3220 @ 3.30GHz 
+two cores of 4 threads
 
-при разбивке на два потока происходит самое быстрое вычисление
+when split into two streams, the fastest calculation occurs
 
 */
 
@@ -48,7 +49,7 @@ int main()
     int l = 0;
     int r = 0;
    
-    //вычисление без потоков
+    //calculation without threads
     auto timePoint1 = std::chrono::steady_clock::now();
     sum(myVector, 0, size);
     auto timePoint2 = std::chrono::steady_clock::now();
@@ -56,8 +57,8 @@ int main()
     std::cout << "Duration: " << duration << " ms" << std::endl << std::endl;
   
     
-    //вычисление с потоками 
-    const int quantity_t = 2;//количество потоков
+    //computing with threads
+    const int quantity_t = 2;//number of threads
     int n = size / quantity_t;
     
     timePoint1 = std::chrono::steady_clock::now();
